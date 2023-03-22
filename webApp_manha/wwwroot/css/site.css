@@ -20,3 +20,16 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+/* login */
+.login-cardi{
+    margin-top: 7rem;
+}
+
+
+/* Cadrasto */
+ol{
+    margin: 1rem;
+    list-style: none;
+}

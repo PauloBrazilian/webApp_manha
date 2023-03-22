@@ -25,6 +25,34 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="BemVindo">BemVindo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/home/login">Login do Sistema</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <!-- Example single danger button -->
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Cadrasto
+                                </button>
+                                <ul class="dropdown-menu">
+                                    @*<li><a class="dropdown-item" href="#">Action</a></li>*@
+                                    <li><a class="dropdown-item" href="#">Clientes</a></li>
+                                    <li><a class="dropdown-item" href="#">Produtos</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="Usuarios/Cadrasto">Usuários</a></li>
+                                    <li><a class="dropdown-item" href="Usuarios/Index">Lista de Usuários</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+
+
+
+
                     </ul>
                 </div>
             </div>
@@ -32,7 +60,9 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            
             @RenderBody()
+        
         </main>
     </div>
 
