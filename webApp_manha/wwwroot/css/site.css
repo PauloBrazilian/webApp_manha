@@ -29,7 +29,17 @@ body {
 
 
 /* Cadrasto */
-ol{
+.text {
+    text-align: center;
+}
+
+.info {
+    text-align: center;
+}
+
+.info ol{
     margin: 1rem;
+    padding: 0 !important;
+    text-align: center;
     list-style: none;
 }
