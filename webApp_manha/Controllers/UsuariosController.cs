@@ -9,7 +9,7 @@ namespace webApp_manha.Controllers
             return View();
         }
 
-        public IActionResult Cadrasto()
+        public IActionResult Cadastro()
         {
             return View();
         }
