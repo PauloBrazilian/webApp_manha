@@ -6,16 +6,16 @@
     <div class="col-4">
     </div>
     <div class="col-4">
-        
+
         @if (@TempData["Erro"] != null)
         {
             <div class="alert alert-danger">
                 @TempData["Erro"]
             </div>
-            
+
         }
 
-        
+
         <div class="card">
             <div class="card-header">
                 Cadrasto do Cliente
@@ -24,13 +24,11 @@
             <div class="card-body">
                 <form action="/Cliente/SalvarDados" method="post">
                     <labe>Nome</labe>
-                    <input type="text" name="Nome" class="form-control" />
+                    <input type="text" name="Nome" class="form-control" value="@Model.Nome" />
 
                     <label>Telefone</label>
-                    <input type="text" name="Telefone" class="form-control" />
+                    <input type="text" name="Telefone" class="form-control" value="@Model.Telefone" />
 
-                    <label>Codigo</label>
-                    <input type="number" name="Id" class="form-control" />
 
                     <button type="submit" class="btn btn-dark" style="margin-top: 1rem;"> Salvar Cliente</button>
                 </form>

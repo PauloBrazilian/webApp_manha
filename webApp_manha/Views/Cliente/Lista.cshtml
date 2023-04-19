@@ -1,6 +1,8 @@
-﻿<div class="card">
+﻿@model List<webApp_manha.Models.ClienteViewModel>
+
+<div class="card">
     <div class="card-header">
-        <h2>Lista de Clientes</h2>
+        <h2>Lista de Clientes </h2>
     </div>
     <div class="card-body">
         <div class="row">
@@ -38,36 +40,53 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Gustavo</td>
-                    <td>+55 016 9962-78054</td>
-                    <td>
-                        <a href="/Cliente/Editar/1" class="btn btn-warning">Editar</a>
-                        <a href="/Cliente/Compras/1" class="btn btn-success">Todas as Compras</a>
-                        <a href="/Cliente/Excluir/1" class="btn btn-danger">Excluir</a>
-                    </td>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td> @item.Id </td>
+                        <td> @item.Nome </td>
+                        <td> @item.Telefone </td>
+                        <td>
+                            <a href="/Cliente/Editar/@item.Id" class="btn btn-warning">Editar</a>
+                            <a href="/Cliente/Compras/@item.Id" class="btn btn-success">Todas as Compras</a>
+                            <a href="/Cliente/Excluir/@item.Id" class="btn btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+
+                }
+
+
+
+                @*<tr>
+                <td>1</td>
+                <td>Gustavo</td>
+                <td>+55 016 9962-78054</td>
+                <td>
+                <a href="/Cliente/Editar/1" class="btn btn-warning">Editar</a>
+                <a href="/Cliente/Compras/1" class="btn btn-success">Todas as Compras</a>
+                <a href="/Cliente/Excluir/1" class="btn btn-danger">Excluir</a>
+                </td>
                 </tr>
                 <tr>
-                    <td>2</td>
-                    <td>Matheus</td>
-                    <td>+55 016 9962-78054</td>
-                    <td>
-                        <a href="/Cliente/Editar/1" class="btn btn-warning">Editar</a>
-                        <a href="/Cliente/Compras/1" class="btn btn-success">Todas as Compras</a>
-                        <a href="/Cliente/Excluir/1" class="btn btn-danger">Excluir</a>
-                    </td>
+                <td>2</td>
+                <td>Matheus</td>
+                <td>+55 016 9962-78054</td>
+                <td>
+                <a href="/Cliente/Editar/1" class="btn btn-warning">Editar</a>
+                <a href="/Cliente/Compras/1" class="btn btn-success">Todas as Compras</a>
+                <a href="/Cliente/Excluir/1" class="btn btn-danger">Excluir</a>
+                </td>
                 </tr>
                 <tr>
-                    <td>3</td>
-                    <td>Luan</td>
-                    <td>+55 016 9962-78054</td>
-                    <td>                        
-                        <a href="/Cliente/Editar/1" class="btn btn-warning">Editar</a>
-                        <a href="/Cliente/Compras/1" class="btn btn-success">Todas as Compras</a>
-                        <a href="/Cliente/Excluir/1" class="btn btn-danger">Excluir</a>
-                    </td>
-                </tr>
+                <td>3</td>
+                <td>Luan</td>
+                <td>+55 016 9962-78054</td>
+                <td>
+                <a href="/Cliente/Editar/1" class="btn btn-warning">Editar</a>
+                <a href="/Cliente/Compras/1" class="btn btn-success">Todas as Compras</a>
+                <a href="/Cliente/Excluir/1" class="btn btn-danger">Excluir</a>
+                </td>
+                </tr>*@
 
             </tbody>
 
