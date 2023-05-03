@@ -12,8 +12,8 @@ namespace webApp_manha.Controllers
         public IActionResult Cadastro()
         {
             return View();
+        
+        
         }
-
-
     }
 }

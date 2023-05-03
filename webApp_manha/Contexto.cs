@@ -10,7 +10,9 @@ namespace webApp_manha
         {}
         public DbSet<Produtos> PRODUTOS { get; set; }
 
+        public DbSet<Categorias> Categorias { get; set; }
 
+        public DbSet<PermissaoEntidade> Permissaos { get; set; }    
 
     }
 }
