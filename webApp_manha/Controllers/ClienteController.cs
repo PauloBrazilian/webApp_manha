@@ -23,7 +23,7 @@ namespace webApp_manha.Controllers
 
 
         [HttpPost]
-        public IActionResult SalvarDados(PermissaoController model) 
+        public IActionResult SalvarDados(ClienteViewModel model) 
         {
             if (model.Id > 0)
             {

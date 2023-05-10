@@ -12,7 +12,7 @@ namespace webApp_manha
 
         public DbSet<Categorias> Categorias { get; set; }
 
-        public DbSet<PermissaoEntidade> Permissaos { get; set; }    
+        public DbSet<PermissaoEntidade> Permissao { get; set; }    
 
     }
 }

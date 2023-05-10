@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using webApp_manha.Entidade;
+using webApp_manha.Models;
 
 namespace webApp_manha.Controllers
 {
@@ -14,7 +15,7 @@ namespace webApp_manha.Controllers
 
         public IActionResult Lista()
         {
-            return View(contexto.Permissaos.ToList());
+            return View(contexto.Permissao.ToList());
         }
 
         public IActionResult Cadrasto() 
@@ -25,7 +26,7 @@ namespace webApp_manha.Controllers
         [HttpPost]
         public IActionResult SalvarDados(PermissaoEntidade dados) 
         {
-            contexto.Permissaos.Add(dados);
+            contexto.Permissao.Add(dados);
             contexto.SaveChanges();
             return RedirectToAction("Lista");  
         }

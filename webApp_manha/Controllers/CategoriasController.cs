@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using webApp_manha;
 using webApp_manha.Entidade;
+using webApp_manha.Models;
 
 namespace webApp_manha.Controllers
 {
@@ -24,11 +25,64 @@ namespace webApp_manha.Controllers
         }
 
         [HttpPost]
-        public IActionResult SalvarDados(Categorias dados)
+        public IActionResult SalvarDados(CategoriaViewModel dados)
         {
-            db.Categorias.Add(dados);
+            Categorias entidade = new Categorias();
+            entidade.NOME = dados.Nome;
+            entidade.ID = dados.Id;
+            //entidade.Ativo = dados.Ativo == "on" ? true : false;
+            entidade.ATIVO = dados.Ativo;
+
+            if (entidade.ID > 0)
+            {
+                db.Categorias.Update(entidade);
+                db.SaveChanges();
+            }
+            else 
+            {
+                db.Categorias.Add(entidade);
+                db.SaveChanges();
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            db.Categorias.Add(entidade);
             db.SaveChanges();
             return RedirectToAction("Lista");
         }
+
+        public IActionResult Excluir(int id)
+        {
+            Categorias item = db.Categorias.Find(id);
+
+            if (item == null)
+            {
+                db.Categorias.Remove(item);
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("Lista");
+        }
+    
+        public IActionResult Editar (int id) 
+        {
+            Categorias item = db.Categorias.Find (id);
+
+            if (item == null)
+            {
+                return View(item);
+            }
+            else 
+            {
+                return RedirectToAction("Lista");
+            }
+        }
+    
     }
 }
